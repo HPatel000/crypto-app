@@ -1,7 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
+app.use(cors());
+app.use(express.json({ extended: false }));
 
 const connectDB = async () => {
   try {
@@ -16,8 +19,6 @@ const connectDB = async () => {
 };
 
 connectDB();
-
-app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => {
   res.send("hello");
