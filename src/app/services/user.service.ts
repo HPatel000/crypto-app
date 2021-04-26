@@ -7,9 +7,11 @@ import axios from 'axios';
   providedIn: 'root',
 })
 export class UserService {
-  users: User;
+  user: User;
   data!: Observable<any>;
-  token: String;
+  token!: String;
+  isAuthenticated: boolean = false;
+  loading: boolean = true;
 
   constructor() {}
 
@@ -17,12 +19,25 @@ export class UserService {
 
   async loadUser() {
     if (localStorage.authToken) {
-      console.log('1*******************');
+      console.log(
+        '🚀 ~ file: user.service.ts ~ line 21 ~ UserService ~ loadUser ~ localStorage.authToken',
+        localStorage.authToken
+      );
       this.setAuthToken(localStorage.authToken);
     }
     try {
       const res = await axios.get('http://localhost:5000/api/auth/');
-      console.log(res.data);
+      console.log(
+        '🚀 ~ file: user.service.ts ~ line 29 ~ UserService ~ loadUser ~ res',
+        res.data
+      );
+      this.user = res.data;
+      this.isAuthenticated = true;
+      this.loading = false;
+      console.log(
+        '🚀 ~ file: user.service.ts ~ line 37 ~ UserService ~ loadUser ~ this.loading',
+        this.loading
+      );
     } catch (err) {
       console.log(err);
     }
@@ -50,7 +65,7 @@ export class UserService {
         user,
         config
       );
-      console.log(res.data);
+      localStorage.setItem('authToken', res.data.token);
       this.loadUser();
     } catch (err) {
       console.log(err);
@@ -69,7 +84,11 @@ export class UserService {
         { email, password },
         config
       );
-      console.log(res.data);
+      console.log(
+        '🚀 ~ file: user.service.ts ~ line 78 ~ UserService ~ login ~ res',
+        res.data.token
+      );
+      localStorage.setItem('authToken', res.data.token);
       this.loadUser();
     } catch (err) {
       console.log(err);
