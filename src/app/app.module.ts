@@ -10,6 +10,7 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { RegisterComponent } from './register/register.component';
 import { RatesComponent } from './rates/rates.component';
 import { HomeComponent } from './home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,13 +21,10 @@ import { HomeComponent } from './home/home.component';
     NewsletterComponent,
     RegisterComponent,
     RatesComponent,
-    HomeComponent
+    HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

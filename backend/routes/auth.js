@@ -9,6 +9,7 @@ const User = require("../models/user");
 
 // @route GET api/auth
 router.get("/", auth, async (req, res) => {
+  console.log("@router GET api/auth");
   try {
     const user = await User.findById(req.user.id).select("-password");
     res.json(user);
@@ -32,6 +33,8 @@ router.post(
       });
     }
     const { email, password } = req.body;
+    console.log("@route POST api/auth");
+    console.log(req.body);
     try {
       let user = await User.findOne({ email });
       if (!user) {
