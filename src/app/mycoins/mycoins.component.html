@@ -1,1 +1,52 @@
-<p>mycoins works!</p>
+
+<div class="d-flex justify-content-center">
+
+</div>
+
+<div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            
+
+                <form #coins="ngForm" (ngSubmit)= "onClickSubmit(coins.value)">
+                    <input type ="text" name="coins" placeholder="Enter value to search" ngModel>
+                    <button type="submit" value="submit">Click</button>
+                </form>
+              
+          </nav>
+
+          <div class="container" id="c">
+          <div class="row">
+              <div class="col-12 col-sm-6">
+                  <h1>{{v['name']}}</h1>
+                  <h3>{{v['symbol']}}</h3>
+
+
+              </div>
+          </div>
+              <div class="row">
+              <div class="col-12 col-sm-6">
+                  <label>Rates (USD)</label><br>
+                <b>{{v['priceUsd']}}</b>
+            </div>
+            <div class="col-12 col-sm-6">
+                <label>Rates (INR)</label><br>
+              <b>{{v['priceUsd']* 80 }} approx.</b>
+          </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <label>Change</label><br>
+              <b>{{v['percentChange24hUsd']}}</b>
+          </div>
+          </div>
+          
+        <div class="row">
+            <div class="col-12 col-sm-6">
+                <label>lastUpdated</label><br>
+              <b>{{v['lastUpdated']}}</b>
+          </div>
+          </div>
+        </div>
+          
+</div>

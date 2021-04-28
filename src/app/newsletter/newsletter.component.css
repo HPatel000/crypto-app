@@ -1,0 +1,17 @@
+.container{
+    background-color: white;
+    display:inline-block;
+    width:100%;
+    margin-left: 10%;;
+    padding:1%;
+    padding-left:2%
+}
+.a{
+    border:5px solid lightgray;
+    
+    width:90%;
+    margin:2%;
+    padding:1%;
+    display:block;
+    align-content: center;
+}
