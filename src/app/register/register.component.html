@@ -1,22 +1,49 @@
-<div class="container">
-    <form action=" " method='POST'>
 
-        <h3>I am a new User</h3><br><br>
-        <div class="form-outlone mb-4">
-            <label>Name</label> <br>         
-            <input type="text" name="name" class="form-control" placeholder="Name"/>
-          </div>
-        <div class="form-outlone mb-4">
-          <label>Email</label> <br>         
-          <input type="email" name="email" class="form-control" placeholder="Email"/>
-        </div>
-        <div class="form-outlone mb-4">
-            <label>Password</label>         <br>       
-            <input type="password" name="password" class="form-control" placeholder="Password"/>
-        </div>
-        <button class="btn" name="submit">Register</button><br>
-        <br>
-        <br>
-        </form>
-            
-        </div>
+  <form action=" " method="POST">
+    <h3>I am a new User</h3>
+    <br /><br />
+    <div class="form-outlone mb-4">
+      <label>Name</label> <br />
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        placeholder="Name"
+        [(ngModel)]="newUser.name"
+        #name
+      />
+    </div>
+    <div class="form-outlone mb-4">
+      <label>Email</label> <br />
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        placeholder="Email"
+        [(ngModel)]="newUser.email"
+        #email
+      />
+    </div>
+    <div class="form-outlone mb-4">
+      <label>Password</label> <br />
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        placeholder="Password"
+        [(ngModel)]="newUser.password"
+        #password
+      />
+    </div>
+    <button
+      class="btn"
+      name="submit"
+      (click)="createUser(name.value, email.value, password.value)"
+    >
+      Register</button
+    ><br />
+    <br />
+    <br />
+    
+  </form>
+</div>
