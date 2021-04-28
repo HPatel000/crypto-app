@@ -1,14 +1,14 @@
 
-<div class="d-flex justify-content-center">
-
-</div>
-
 <div class="container">
-    <div *ngFor="let e of p;">
-    <div class="a">
-        <div><img src={{e.urltoImage}} alt="img"></div>
-        <div>{{e.publishedAt}}</div>
-        <div>{{e.content}}</div>
+    <div *ngFor="let e of p;" (click)= "onClickSubmit(e)">
+    <div class="a row">
+        <div class="col-12 col-sm-3"><img src={{e.urlToImage}} alt="img"></div>
+        <div class="col-12 col-sm">{{e.publishedAt}}
+            <br/>
+            <br/>
+            {{e.title}}
+        </div>
+        
     </div>
 </div>
 </div>

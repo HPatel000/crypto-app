@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { RatesComponent } from './rates/rates.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { MycoinsComponent } from './mycoins/mycoins.component';
+import { FullnewsComponent } from './fullnews/fullnews.component';
 
 const routes: Routes = [
   {
@@ -27,7 +28,10 @@ const routes: Routes = [
   },{
     component:RatesComponent,
     path:'rates'
-  },
+  },{
+    component:FullnewsComponent,
+    path:'fullnews'
+  }
 ];
 
 @NgModule({

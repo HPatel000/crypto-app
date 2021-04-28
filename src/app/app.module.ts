@@ -12,6 +12,7 @@ import { RatesComponent } from './rates/rates.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FullnewsComponent } from './fullnews/fullnews.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +23,14 @@ import { FormsModule } from '@angular/forms';
     NewsletterComponent,
     RegisterComponent,
     RatesComponent,
-    HomeComponent
+    HomeComponent,
+    FullnewsComponent
   ],
   imports: [  
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HomeComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

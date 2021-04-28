@@ -14,4 +14,10 @@ export class DataService {
    public sendGetRequest(){
     return this.httpClient.get(this.api)
    }
+   getImage(a){
+     console.log("h")
+      return this.httpClient.get(a,{ responseType: 'blob'})
+
+     
+   }
 }
