@@ -1,0 +1,15 @@
+.container {
+  margin-left: 10%;
+  padding: 2%;
+  border: 1px solid gray;
+  margin-top: 4rem;
+}
+
+img {
+  width: 50%;
+  margin-left: 20%;
+  height: 50vh;
+}
+h1 {
+  text-align: center;
+}

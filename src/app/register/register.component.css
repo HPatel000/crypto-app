@@ -1,53 +1,48 @@
+.container {
+  background-color: lightcyan;
 
-.container{
+  margin-left: 20%;
+  margin-top: 5vh;
 
-    background-color:black;
-    
-    margin-left:20%;
-    margin-top:5vh;
-    
-    padding:5%;
-    font-size:150%;
-    width:60%;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color:blue;
-
+  padding: 5%;
+  font-size: 150%;
+  width: 60%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: rgb(0, 88, 88);
 }
-.center{
-    text-align: center;
-    width:100%;
+.center {
+  text-align: center;
+  width: 100%;
 }
-h3{
-    text-align: center;
+h3 {
+  text-align: center;
 }
-label{
-    color:blue;
-    font-size: 90%;
+label {
+  color: rgb(0, 88, 88);
+  font-size: 90%;
 }
-nav{
-  padding:2%;
-
+nav {
+  padding: 2%;
 }
-.left{
-  width:100%;
+.left {
+  width: 100%;
   text-align: right;
 }
-.right{
+.right {
   justify-items: right;
-  
-  align-items:right;
-}
-.btn{
-  background-color: blue;
-  color:white;
-  height:2em;
-  width:50%;
-  margin-left:25%;
 
+  align-items: right;
 }
-a{
-  color:purple;
+.btn {
+  background-color: rgb(14, 119, 119);
+  color: white;
+  height: 2em;
+  width: 50%;
+  margin-left: 25%;
+}
+a {
+  color: purple;
 }

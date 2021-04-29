@@ -1,0 +1,28 @@
+.coinsSelectMenu {
+  font-size: 1rem;
+}
+.dflex {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+.tableContainer {
+  margin-top: 3rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+table {
+  font-size: 1rem;
+  margin-left: -2rem;
+}
+
+.btn {
+  background-color: rgb(14, 119, 119);
+  color: white;
+  margin-top: 1em;
+  border: none;
+  border-radius: 5px;
+}

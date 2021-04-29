@@ -1,1 +1,14 @@
-<p>newsletter works!</p>
+
+<div class="container">
+    <div *ngFor="let e of p;" (click)= "onClickSubmit(e)">
+    <div class="a row">
+        <div class="col-12 col-sm-3"><img src={{e.urlToImage}} alt="img"></div>
+        <div class="col-12 col-sm">{{e.publishedAt}}
+            <br/>
+            <br/>
+            {{e.title}}
+        </div>
+        
+    </div>
+</div>
+</div>

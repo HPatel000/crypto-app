@@ -14,12 +14,13 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.userService.loadUser().then(() => {
       if (this.userService.isAuthenticated && !this.userService.loading) {
-        this.router.navigate(['/mycoins']);
+        this.router.navigate(['/home']);
       }
     });
   }
 
   loginUser(email: string, password: string) {
     this.userService.login({ email, password });
+    // location.reload();
   }
 }

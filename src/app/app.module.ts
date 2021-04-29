@@ -10,7 +10,9 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { RegisterComponent } from './register/register.component';
 import { RatesComponent } from './rates/rates.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FullnewsComponent } from './fullnews/fullnews.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,14 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     RatesComponent,
     HomeComponent,
+    FullnewsComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [  
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

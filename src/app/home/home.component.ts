@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.userService.loadUser().then(() => {
@@ -15,6 +16,8 @@ export class HomeComponent implements OnInit {
     });
     if (this.userService.isAuthenticated && !this.userService.loading) {
       console.log('user authenticated');
+    } else {
+      this.router.navigate(['/login']);
     }
   }
 }

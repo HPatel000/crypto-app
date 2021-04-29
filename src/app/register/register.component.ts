@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.userService.loadUser().then(() => {
       if (this.userService.isAuthenticated && !this.userService.loading) {
-        this.router.navigate(['/mycoins']);
+        this.router.navigate(['/home']);
       }
     });
   }
@@ -25,5 +25,6 @@ export class RegisterComponent implements OnInit {
   createUser(name: string, email: string, password: string) {
     this.userService.register({ name, email, password });
     console.log(name, email, password);
+    // location.reload();
   }
 }

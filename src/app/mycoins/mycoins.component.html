@@ -1,1 +1,59 @@
-<p>mycoins works!</p>
+<div class="container">
+  <div class="dflex">
+    <div class="dflex-one">
+      <label for="coins"> Add Coin </label>
+      <br />
+      <select name="coins" id="coins" class="coinsSelectMenu" #addcoins>
+        <option *ngFor="let coin of CoinNames" value="{{ coin }}">
+          {{ coin }}
+        </option>
+      </select>
+      <br />
+      <input
+        class="btn"
+        type="button"
+        value="Add Coin"
+        (click)="onCoinAdd(addcoins.value)"
+      />
+    </div>
+    <div class="dflex-one">
+      <label for="coins"> Remove Coin </label>
+      <br />
+      <select name="coins" id="coins" class="coinsSelectMenu" #removecoins>
+        <option *ngFor="let coin of CoinNames" value="{{ coin }}">
+          {{ coin }}
+        </option>
+      </select>
+      <br />
+      <input
+        class="btn"
+        type="button"
+        value="Remove Coin"
+        (click)="onCoinRemove(removecoins.value)"
+      />
+    </div>
+  </div>
+</div>
+
+<div class="tableContainer">
+  <table class="table mb-4">
+    <thead>
+      <tr>
+        <th scope="col">Coin</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Rates (USD)</th>
+        <th scope="col">Change</th>
+        <th scope="col">Last Updated</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userCoinsData">
+        <td>{{ item["name"] }}</td>
+        <td>{{ item["symbol"] }}</td>
+        <td>{{ item["priceUsd"] }}</td>
+        <td>{{ item["percentChange24hUsd"] }}</td>
+        <td>{{ item["lastUpdated"] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

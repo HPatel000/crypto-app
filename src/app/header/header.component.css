@@ -1,0 +1,9 @@
+nav {
+  top: 0;
+  position: fixed;
+  z-index: 100;
+}
+
+h3 {
+  font-size: 2rem;
+}
