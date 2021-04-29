@@ -5,8 +5,9 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user");
 const { jwtsecret } = require("../config/secrets");
 const { check, validationResult } = require("express-validator");
+const auth = require("../middleware/auth");
 
-// @route POST api/user
+// @route POST api/users
 router.post(
   "/",
   [
@@ -56,5 +57,37 @@ router.post(
     }
   }
 );
+
+// @route PUT api/users
+router.put("/addcoin/:id", auth, async (req, res) => {
+  const { coin } = req.body.data;
+  console.log("🚀 ~ file: users.js ~ line 64 ~ router.put ~ coin", coin);
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.params.id,
+      { $push: { coins: coin } },
+      { new: true }
+    );
+    res.json(user);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send("Server Error");
+  }
+});
+
+// @route PUT api/users
+router.put("/removecoin/:id", auth, async (req, res) => {
+  const { coin } = req.body.data;
+  console.log("🚀 ~ file: users.js ~ line 81 ~ router.put ~ coin", coin);
+  try {
+    const user = await User.findByIdAndUpdate(req.params.id, {
+      $pull: { coins: coin },
+    });
+    res.json(user);
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send("Server Error");
+  }
+});
 
 module.exports = router;

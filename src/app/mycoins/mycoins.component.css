@@ -1,63 +1,28 @@
-tr {
-  color: aliceblue;
+.coinsSelectMenu {
+  font-size: 1rem;
 }
-div {
-  background-color: white;
+.dflex {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+.tableContainer {
   margin-top: 3rem;
 }
-ul {
-  list-style-type: none;
-  overflow: hidden;
-  margin: 5px;
-  padding: 10px;
-  display: flex;
-  width: 20%;
-  margin-left: -5em;
-  display: inline-block;
-  text-align: center;
 
-  overflow: auto;
+label {
+  font-weight: bold;
 }
-ul#a li {
-  float: left;
-  height: 3em;
-  padding: 5px;
-  text-align: center;
-  align-items: center;
+
+table {
+  font-size: 1rem;
+  margin-left: -2rem;
 }
-ul {
-  background-color: white;
-}
-h1 {
-  color: gray;
-}
-input {
-  width: 70%;
-  padding: 1%;
-}
-form {
-  width: 100%;
-}
-button {
-  background-color: blue;
-  height: 2em;
-  font-size: 120%;
-  font-weight: bolder;
-  width: 25%;
+
+.btn {
+  background-color: rgb(14, 119, 119);
   color: white;
-  border-radius: 30px;
-  margin-left: 2%;
-}
-#c {
-  margin: 2%;
-  padding: 1%;
-  text-align: left;
-  align-items: left;
-  display: none;
-}
-#c .row {
-  border-bottom: 1px solid lightgray;
-  margin: 2%;
-  padding: 1%;
-  font-size: 150%;
+  margin-top: 1em;
+  border: none;
+  border-radius: 5px;
 }

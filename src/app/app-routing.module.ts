@@ -31,7 +31,7 @@ const routes: Routes = [
     path: 'mycoins',
   },
   {
-    component: MycoinsComponent,
+    component: RatesComponent,
     path: 'rates',
   },
   {

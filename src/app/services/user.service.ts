@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class UserService {
-  user: User;
+  user: any;
+  usercoins: [];
   data!: Observable<any>;
   token!: String;
   isAuthenticated: boolean = false;
@@ -33,6 +34,7 @@ export class UserService {
         res.data
       );
       this.user = res.data;
+      this.usercoins = this.user.coins;
       this.isAuthenticated = true;
       this.loading = false;
       console.log(
@@ -93,6 +95,54 @@ export class UserService {
       localStorage.setItem('authToken', res.data.token);
       this.loadUser();
       this.router.navigate(['/home']);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async addCoin(coin) {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        coin: coin,
+      },
+    };
+    try {
+      const res = await axios.put(
+        `http://localhost:5000/api/users/addcoin/${this.user._id}`,
+        config
+      );
+      console.log(
+        '🚀 ~ file: user.service.ts ~ line 78 ~ UserService ~ login ~ res',
+        res.data
+      );
+      this.loadUser();
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  async removeCoin(coin) {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: {
+        coin: coin,
+      },
+    };
+    try {
+      const res = await axios.put(
+        `http://localhost:5000/api/users/removecoin/${this.user._id}`,
+        config
+      );
+      console.log(
+        '🚀 ~ file: user.service.ts ~ line 78 ~ UserService ~ login ~ res',
+        res.data
+      );
+      this.loadUser();
     } catch (err) {
       console.log(err);
     }
