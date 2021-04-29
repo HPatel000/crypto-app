@@ -29,11 +29,11 @@
         <a class="nav-link" routerLink="news" href="#">Top News</a>
       </li>
       <li class="nav-item" *ngIf="isAuthenticated">
-        <a class="nav-link" routerLink="mycoins" href="#">My Coins</a>
+        <a class="nav-link" routerLink="mycoins" href="#">Coin Rates</a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" routerLink="rates" href="#">Coin Rates</a>
-      </li>
+      </li> -->
       <li class="nav-item" *ngIf="isAuthenticated">
         <a class="nav-link" (click)="logout()" href="#">Log out</a>
       </li>
