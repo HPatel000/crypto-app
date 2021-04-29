@@ -11,31 +11,41 @@ import { FullnewsComponent } from './fullnews/fullnews.component';
 
 const routes: Routes = [
   {
-    component:LoginComponent,
-    path:'login'
-  },{
-    component:RegisterComponent,
-    path:'register'
-  },{
-    component:HomeComponent,
-    path:'home'
-  },{
-    component:NewsletterComponent,
-    path:'news'
-  },{
-    component:MycoinsComponent,
-    path:'mycoins'
-  },{
-    component:RatesComponent,
-    path:'rates'
-  },{
-    component:FullnewsComponent,
-    path:'fullnews'
-  }
+    component: LoginComponent,
+    path: 'login',
+  },
+  {
+    component: RegisterComponent,
+    path: 'register',
+  },
+  {
+    component: HomeComponent,
+    path: 'home',
+  },
+  {
+    component: NewsletterComponent,
+    path: 'news',
+  },
+  {
+    component: MycoinsComponent,
+    path: 'mycoins',
+  },
+  {
+    component: MycoinsComponent,
+    path: 'rates',
+  },
+  {
+    component: FullnewsComponent,
+    path: 'fullnews',
+  },
+  {
+    component: HomeComponent,
+    path: '**',
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

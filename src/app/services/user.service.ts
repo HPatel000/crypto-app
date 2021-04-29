@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from '../models/User';
 import axios from 'axios';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +14,7 @@ export class UserService {
   isAuthenticated: boolean = false;
   loading: boolean = true;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   getToken() {}
 
@@ -67,6 +68,7 @@ export class UserService {
       );
       localStorage.setItem('authToken', res.data.token);
       this.loadUser();
+      this.router.navigate(['/home']);
     } catch (err) {
       console.log(err);
     }
@@ -90,6 +92,7 @@ export class UserService {
       );
       localStorage.setItem('authToken', res.data.token);
       this.loadUser();
+      this.router.navigate(['/home']);
     } catch (err) {
       console.log(err);
     }
